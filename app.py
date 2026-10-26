@@ -129,7 +129,11 @@ if MODEL_PATH.exists():
 else:
     st.error(f"XGBoost model not found: {MODEL_PATH}")
 
+
 if SARIMA_PATH.exists():
     st.success("SARIMA model file found.")
 else:
-    st.error(f"SARIMA model not found: {SARIMA_PATH}")
+    st.info(
+        "SARIMA model file is not included in the deployed app. "
+        "The saved forecast and model comparison are available above."
+    )
